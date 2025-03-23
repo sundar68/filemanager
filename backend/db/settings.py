@@ -20,7 +20,7 @@ class DatabaseSettings(BaseModel):
     username: str = "postgres"
     password: SecretStr
     port: int = 5432
-    database: str = "trade_sadhana"
+    database: str = "typeface"
 
 
 class CloudSettings(BaseModel):
