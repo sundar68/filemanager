@@ -26,6 +26,6 @@ _ASYNC_ENGINE = new_async_engine(get_settings().sqlalchemy_database_uri)
 _ASYNC_SESSIONMAKER = async_sessionmaker(_ASYNC_ENGINE, expire_on_commit=False)
 
 
-async def get_async_session() -> AsyncGenerator[AsyncSession, Any]:  # pragma: no cover
+async def get_async_session() -> AsyncGenerator[AsyncSession, Any]:
     async with _ASYNC_SESSIONMAKER() as session:
         yield session

@@ -16,6 +16,7 @@ logs
 __pycache__
 .idea/
 backend/venv
+backend/venv1
 
 
 .vscode/*

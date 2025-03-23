@@ -1,11 +1,5 @@
-# Frontend Service (React & TypeScript)
+# Backend Service (FastApi)
 
-This repository contains the Docker setup for a frontend service built with React and TypeScript. The application is built using Node.js 22 (managed via NVM) and served using Nginx on port **3210**.
-
-## Prerequisites
-
-- [Docker](https://docs.docker.com/get-docker/) installed on your machine.
-- [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
 ## Setup Steps
 
@@ -14,7 +8,7 @@ This repository contains the Docker setup for a frontend service built with Reac
 Clone the repository to your local machine and navigate into the project directory:
 
 ```sh
-git clone https://github.com/sundar68/filemanager
+git clone https://github.com/sundar68/filemanager.git
 cd filemanager
 ```
 
@@ -28,14 +22,37 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 3210
 ```
 
-## Run Minio server
+## Run Minio server and PostgreSql
 
 ```bash
 docker pull minio/minio
 docker pull postgres:16
 docker-compose up -d
 ```
+# create a bucket in minio with name 'filemanager'
+# Get the Access Id and Secret key and set it in .env file
 
+
+
+## Postgres Commands
+
+```bash
+psql -U postgres -h localhost
+CREATE DATABASE typeface;
+\c typeface;
+
+CREATE TABLE files (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL,
+    type TEXT NOT NULL,
+    size INTEGER NOT NULL,
+    url TEXT NOT NULL,
+    upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    storage_type VARCHAR NOT NULL
+);
+```
+
+# Frontend Service (React & TypeScript)
 
 ## Running Frontend service locally
 
@@ -49,3 +66,7 @@ nvm use v22
 npm i
 npm run dev
 ```
+
+📽️ [Watch the demo video](video.mov)
+
+## Drive link for demo : https://drive.google.com/file/d/12MBhYAbkPxnt4uzMfomW6JLvr5PFc9jz/view?usp=sharing
