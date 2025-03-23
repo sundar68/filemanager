@@ -67,6 +67,7 @@ npm i
 npm run dev
 ```
 
-📽️ [Watch the demo video](video.mov)
+ [Watch the demo video]
 
+## 📽️ Watch the demo video 
 ## Drive link for demo : https://drive.google.com/file/d/12MBhYAbkPxnt4uzMfomW6JLvr5PFc9jz/view?usp=sharing
